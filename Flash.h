@@ -25,12 +25,7 @@
 #else
 #include "WProgram.h"
 #endif
-
-#ifndef __arm__
 #include <avr/pgmspace.h>
-#else
-#include "pgmspace.h"
-#endif
 
 #define FLASH_LIBRARY_VERSION 5
 
