@@ -20,11 +20,16 @@
 #ifndef __FLASH_H__
 #define __FLASH_H__
 
-#include <avr/pgmspace.h>
 #if ARDUINO >= 100
 #include "Arduino.h"
 #else
 #include "WProgram.h"
+#endif
+
+#ifndef __arm__
+#include <avr/pgmspace.h>
+#else
+#include "pgmspace.h"
 #endif
 
 #define FLASH_LIBRARY_VERSION 5
