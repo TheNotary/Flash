@@ -19,6 +19,7 @@
 */
 
 #include "Flash.h"
+#ifdef __AVR__
 
 _FLASH_STRING::_FLASH_STRING(const char PROGMEM *arr) : _arr(arr)
 { }
@@ -31,4 +32,6 @@ void _FLASH_STRING::print(Print &stream) const
     if (!c) break;
     stream.print(c); // print in char form
   }
+#endif
+
 }
