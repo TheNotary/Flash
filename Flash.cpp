@@ -32,6 +32,6 @@ void _FLASH_STRING::print(Print &stream) const
     if (!c) break;
     stream.print(c); // print in char form
   }
-#endif
-
 }
+
+#endif // __AVR__

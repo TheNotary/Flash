@@ -20,14 +20,14 @@
 #ifndef __FLASH_H__
 #define __FLASH_H__
 
+#ifdef __AVR__
+
 #if ARDUINO >= 100
 #include "Arduino.h"
 #else
 #include "WProgram.h"
 #endif
 #include <avr/pgmspace.h>
-
-#ifdef __AVR__
 
 #define FLASH_LIBRARY_VERSION 5
 
@@ -231,6 +231,7 @@ inline Print &operator <<(Print &stream, const _FLASH_TABLE<T> &printable)
 
 inline Print &operator <<(Print &stream, const _FLASH_STRING_ARRAY &printable)
 { printable.print(stream); return stream; }
-#endif
+
+#endif // __AVR__
 
 #endif // def __FLASH_H__
