@@ -27,6 +27,8 @@
 #endif
 #include <avr/pgmspace.h>
 
+#ifdef __AVR__
+
 #define FLASH_LIBRARY_VERSION 5
 
 // Use these macros to define your flash-based data structures
@@ -229,5 +231,6 @@ inline Print &operator <<(Print &stream, const _FLASH_TABLE<T> &printable)
 
 inline Print &operator <<(Print &stream, const _FLASH_STRING_ARRAY &printable)
 { printable.print(stream); return stream; }
+#endif
 
 #endif // def __FLASH_H__
